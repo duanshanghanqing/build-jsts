@@ -1,0 +1,71 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "build ts to js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "browser/index.js",
+  "browser": "browser/index.min.js",
+  "typings": "es/index.d.ts",
+  "files": [
+    "browser",
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build",
+    "lint:create": "eslint --init",
+    "lint": "eslint --ext .ts src",
+    "lint-fix": "eslint --fix --ext .ts src"
+  },
+  "author": "gaojunfeng",
+  "license": "MIT",
+  "keywords": [
+    "sdk"
+  ],
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-typescript": "^7.13.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "autoprefixer": "^10.2.4",
+    "core-js": "^2.6.12",
+    "eslint": "^7.21.0",
+    "husky": "^4.3.8",
+    "rollup": "^2.34.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-version-injector": "^1.3.2",
+    "typescript": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-fix"
+    }
+  }
+}
