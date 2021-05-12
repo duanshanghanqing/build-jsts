@@ -30,7 +30,7 @@ export default {
         {
             file: path.resolve(__dirname, pkg.unpkg),
             format: 'umd',
-            name: pkg.name, // 全局变量名称
+            name: pkg.name,
             globals,
             exports: 'named',
         },
@@ -43,7 +43,7 @@ export default {
             exports: 'named',
         }
     ],
-    external: [], // 屏蔽要打入的包
+    external: [],
     plugins: [
         versionInjector(),
         typescript(),
