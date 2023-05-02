@@ -3,7 +3,7 @@ class A {}
 
 const test = () => {
     const a = new A();
-    console.log('test');
+    console.log(a);
     console.log([1,2,3].includes(1));
     console.log(new Map());
     console.log(new Set());
